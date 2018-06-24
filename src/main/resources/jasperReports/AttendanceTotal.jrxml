@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Attendance" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f3ee72f3-0a45-4f8b-8764-255d3028243b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Curriculam"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<parameter name="p_Subject" class="java.lang.Integer"/>
+	<parameter name="p_Group" class="java.lang.Integer"/>
+	<parameter name="p_Student" class="java.lang.Integer"/>
+	<parameter name="p_From" class="java.lang.String"/>
+	<parameter name="p_Till" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+qv.subject_id, qv.subjectName,
+qv.group_id, qv.groupName,
+qv.student_id, qv.studentName,
+qv.attendance_state_id, qv.attendanceStateName,
+qv.stateAbsent, qv.States3
+FROM QVCurriculumStudentAttendance qv
+WHERE
+( $P{p_Subject} is null or  SUBJECT_ID =  $P{p_Subject} )
+AND 
+( $P{p_Group} is null or  GROUP_ID =  $P{p_Group} )
+AND 
+( $P{p_Student} is null or  STUDENT_ID =  $P{p_Student} )
+AND 
+	CALENDAR_DATE between to_date('$P!{p_From}', 'DD.MM.YYYY') 
+	and to_date('$P!{p_Till}', 'DD.MM.YYYY') 
+
+
+ORDER BY  subject_id, group_id, student_id]]>
+	</queryString>
+	<field name="subject_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="subject_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="subjectName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="subjectName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="group_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="group_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="groupName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="groupName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="student_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="student_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="studentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="studentName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="attendance_state_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="attendance_state_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="attendanceStateName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="attendanceStateName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="stateAbsent" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="stateAbsent"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<field name="States3" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="States3"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="QVCurriculumStudentAttendance"/>
+	</field>
+	<variable name="attendance_state_id1" class="java.lang.Integer" resetType="Group" resetGroup="Student" calculation="Count">
+		<variableExpression><![CDATA[$F{attendance_state_id}]]></variableExpression>
+	</variable>
+	<variable name="stateAbsent1" class="java.lang.Integer" resetType="Group" resetGroup="Student" calculation="Sum">
+		<variableExpression><![CDATA[$F{stateAbsent}]]></variableExpression>
+	</variable>
+	<variable name="States31" class="java.lang.Integer" resetType="Group" resetGroup="Student" calculation="Sum">
+		<variableExpression><![CDATA[$F{States3}]]></variableExpression>
+	</variable>
+	<group name="Subject Group" footerPosition="StackAtBottom">
+		<groupExpression><![CDATA[$F{subject_id}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="180" y="0" width="300" height="20" uuid="b50369e9-6bcd-40f3-be2a-1177adff5228">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf1c466d-708b-4b90-af3e-338802b63af9"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{subjectName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="100" height="20" uuid="2b4beed7-bfd0-42ec-8f77-efe7dca6da59">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edd766e6-a9d4-4056-8718-fa9cfcbb6eb7"/>
+					</reportElement>
+					<box rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Предмет: ]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group">
+		<groupExpression><![CDATA[$F{group_id}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="180" y="0" width="300" height="20" uuid="ee0bd0ed-0aeb-4386-aa9e-db05e7f7269d">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf1c466d-708b-4b90-af3e-338802b63af9"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{groupName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="80" y="0" width="100" height="20" uuid="b0fc70ff-c65c-47d7-9bd0-db3eaa784ace">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edd766e6-a9d4-4056-8718-fa9cfcbb6eb7"/>
+					</reportElement>
+					<box rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Група: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="280" y="20" width="80" height="20" uuid="59712fce-55d8-4b03-bfb8-968cbdcc5a02">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edd766e6-a9d4-4056-8718-fa9cfcbb6eb7"/>
+					</reportElement>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Всього занять]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="280" height="20" uuid="ccdb1601-dddb-40e4-8e21-410a3a751cec">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edd766e6-a9d4-4056-8718-fa9cfcbb6eb7"/>
+					</reportElement>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Студент]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="360" y="20" width="80" height="20" uuid="bcf302f2-9114-41dd-a1ec-7ed7e1ec6473">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edd766e6-a9d4-4056-8718-fa9cfcbb6eb7"/>
+					</reportElement>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Відсутній]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="440" y="20" width="80" height="20" uuid="8f5bfcd1-3150-433d-8a1d-7a667bc20a41">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edd766e6-a9d4-4056-8718-fa9cfcbb6eb7"/>
+					</reportElement>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<text><![CDATA[За хворобою]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="20"/>
+		</groupFooter>
+	</group>
+	<group name="Student" keepTogether="true">
+		<groupExpression><![CDATA[$F{student_id}]]></groupExpression>
+		<groupFooter>
+			<band height="20">
+				<textField>
+					<reportElement x="360" y="0" width="80" height="20" uuid="ca5a07f8-1fe4-406e-a6d5-48693502c60f"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{stateAbsent1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="0" width="80" height="20" uuid="de9c9390-9a28-4e28-89e8-1879d4aa3eed"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{attendance_state_id1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="280" height="20" uuid="1b73e9ea-e0bc-4416-8e39-8c6d37559adc">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf1c466d-708b-4b90-af3e-338802b63af9"/>
+					</reportElement>
+					<box leftPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{studentName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="440" y="0" width="80" height="20" uuid="1e4c5153-0d8f-4f47-a640-bf083c670ea2"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{States31}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="520" height="20" uuid="78d2a6a3-3148-4d53-9577-1ec6e4339f10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Облік відвідування занять]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="20" width="100" height="20" uuid="242d318a-d4d1-472e-bae6-eced755442fd"/>
+				<box rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Період з:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="40" width="100" height="20" uuid="5369a8fc-a7ce-4d96-9f20-0568e4c01321"/>
+				<box rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Період по:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="20" width="100" height="20" uuid="91119bf2-f36b-45f9-a895-7e1887047310"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{p_From}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="40" width="100" height="20" uuid="08c70366-0eac-406d-947e-bd9602c030a7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{p_Till}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="444" y="0" width="76" height="20" uuid="e591a2c5-efb4-4007-9c53-8be7c8737ab9"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

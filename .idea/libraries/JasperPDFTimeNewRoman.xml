@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JasperPDFTimeNewRoman">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../JasperReport/Times_New_Roman/JasperPDFTimeNewRoman.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

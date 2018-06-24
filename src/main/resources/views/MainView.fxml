@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="ua.curriculum.controller.MainViewController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Меню">
+                    <items>
+                        <MenuItem fx:id="menuItemChangePassword" mnemonicParsing="false"
+                                  onAction="#onMenuItemChangePassword" text="Змінити пароль"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#onMenuItemExit" text="Вихід"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="menuStudents" mnemonicParsing="false" text="Студенти">
+                    <items>
+                        <MenuItem fx:id="menuItemGroups" mnemonicParsing="false" onAction="#onMenuItemGroups"
+                                  text="Групи"/>
+
+                        <MenuItem fx:id="menuItemStudents" mnemonicParsing="false" onAction="#onMenuItemStudents"
+                                  text="Студенти"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="menuTeachers" mnemonicParsing="false" text="Викладачі">
+                    <items>
+                        <MenuItem fx:id="menuItemSubjects" mnemonicParsing="false" onAction="#onMenuItemSubjects"
+                                  text="Предмети"/>
+                        <MenuItem fx:id="menuItemTeachers" mnemonicParsing="false" onAction="#onMenuItemTeachers"
+                                  text="Викладачі"/>
+                    </items>
+                </Menu>
+
+                <Menu mnemonicParsing="false" text="Навчання">
+                    <items>
+                        <MenuItem fx:id="menuItemAttendance" mnemonicParsing="false" onAction="#onMenuItemAttendance"
+                                  text="Відвідуваність"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem fx:id="menuItemSchoolyear" mnemonicParsing="false" onAction="#onMenuItemSchoolyear"
+                                  text="Навчальні роки"/>
+                        <MenuItem fx:id="menuItemClassrooms" mnemonicParsing="false" onAction="#onMenuItemClassrooms"
+                                  text="Аудиторії"/>
+                        <MenuItem fx:id="menuItemLessonTypes" mnemonicParsing="false" onAction="#onMenuItemLessonTypes"
+                                  text="Вид заняття"/>
+                        <MenuItem fx:id="menuItemLessons" mnemonicParsing="false" onAction="#onMenuItemLesson"
+                                  text="Час занять"/>
+                        <MenuItem fx:id="menuItemSpecialities" mnemonicParsing="false"
+                                  onAction="#onMenuItemSpecialities" text="Спеціальності"/>
+                    </items>
+                </Menu>
+
+                <Menu fx:id="menuAdministration" mnemonicParsing="false" text="Адміністрування">
+                    <items>
+                        <MenuItem fx:id="menuItemUsers" mnemonicParsing="false" onAction="#onMenuItemUsers"
+                                  text="Користувачі"/>
+                    </items>
+
+                </Menu>
+
+                <Menu mnemonicParsing="false" text="Допомога">
+                    <items>
+                        <MenuItem fx:id="menuItemHelp" mnemonicParsing="false" onAction="#onMenuItemHelp"
+                                  text="Інструкція користувача"/>
+                    </items>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <items>
+                        <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAbout"
+                                  text="Про програму"/>
+                    </items>
+
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

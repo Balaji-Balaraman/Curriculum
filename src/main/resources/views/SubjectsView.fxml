@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="501.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8.0.121" fx:controller="ua.curriculum.controller.SubjectsViewController">
+    <children>
+        <BorderPane prefHeight="484.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <TabPane fx:id="tabPane" prefHeight="472.0" prefWidth="800.0" side="BOTTOM"
+                         tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                        <Tab fx:id="tabTable" text="Предмети">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <TableView fx:id="tableViewData" prefHeight="428.0" prefWidth="768.0"
+                                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                                <TableColumn fx:id="tableColumnId" prefWidth="56.0" text="Код"/>
+                                                <TableColumn fx:id="tableColumnFullName" prefWidth="300.0"
+                                                             text="Назва"/>
+                                                <TableColumn fx:id="tableColumnShortName" prefWidth="300.0"
+                                                             text="Скорочено"/>
+                                                <TableColumn fx:id="tableColumnCode" prefWidth="150.0"
+                                                             text="Позначення"/>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabView" text="Запис">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <GridPane layoutX="186.0" layoutY="19.0" prefHeight="138.0" prefWidth="780.0"
+                                                  AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                                                  AnchorPane.topAnchor="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity"
+                                                                   minWidth="-Infinity" prefWidth="130.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0"
+                                                                   prefWidth="486.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="143.0"
+                                                                   prefWidth="164.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Код">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFViewId" editable="false"
+                                                           GridPane.columnIndex="1"/>
+
+                                                <Label text="Назва" GridPane.rowIndex="1">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFViewFullName" editable="false"
+                                                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                                <Label text="Скорочено" GridPane.rowIndex="2">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFViewShortName" editable="false"
+                                                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                                                <Label text="Позначення" GridPane.rowIndex="3">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFViewCode" editable="false"
+                                                           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                            </children>
+                                        </GridPane>
+                                        <BorderPane layoutX="116.0" layoutY="148.0" prefHeight="268.0" prefWidth="795.0"
+                                                    AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0"
+                                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+                                            <center>
+                                                <AnchorPane prefHeight="300.0" prefWidth="765.0"
+                                                            BorderPane.alignment="CENTER">
+                                                    <children>
+                                                        <TableView fx:id="tableViewTeacherData" prefHeight="258.0"
+                                                                   prefWidth="765.0" AnchorPane.bottomAnchor="0.0"
+                                                                   AnchorPane.leftAnchor="0.0"
+                                                                   AnchorPane.rightAnchor="0.0"
+                                                                   AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="tableColumnTeacherID"
+                                                                             prefWidth="80.0" text="Код"/>
+                                                                <TableColumn fx:id="tableColumnTeacherPIP"
+                                                                             prefWidth="300.0" text="ПІП"/>
+                                                                <TableColumn fx:id="tableColumnTeacherPosition"
+                                                                             prefWidth="300.0" text="Посада"/>
+
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </center>
+                                            <right>
+                                                <VBox spacing="5.0" BorderPane.alignment="CENTER">
+                                                    <children>
+
+                                                        <Button fx:id="buttonNewTeacher" layoutX="14.0" layoutY="2.0"
+                                                                maxWidth="-Infinity" minWidth="-Infinity"
+                                                                mnemonicParsing="false" onAction="#onButtonNewTeacher"
+                                                                prefWidth="30.0" text="Новий"/>
+
+                                                        <Button fx:id="buttonDeleteTeacher" layoutX="133.0"
+                                                                layoutY="2.0" maxWidth="-Infinity" minWidth="-Infinity"
+                                                                mnemonicParsing="false"
+                                                                onAction="#onButtonDeleteTeacher" prefWidth="30.0"
+                                                                text="Вилучити"/>
+
+                                                    </children>
+                                                    <padding>
+                                                        <Insets top="25.0"/>
+                                                    </padding>
+                                                </VBox>
+                                            </right>
+                                            <top>
+                                                <Label text="Викладачі предмету" BorderPane.alignment="CENTER">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                    <padding>
+                                                        <Insets bottom="5.0"/>
+                                                    </padding>
+                                                </Label>
+                                            </top>
+                                        </BorderPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabEdit" text="Редагування">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <GridPane layoutX="186.0" layoutY="19.0" prefHeight="256.0" prefWidth="780.0"
+                                                  AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                                                  AnchorPane.topAnchor="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity"
+                                                                   minWidth="-Infinity" prefWidth="130.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0"
+                                                                   prefWidth="486.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="143.0"
+                                                                   prefWidth="164.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Код">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFEditId" editable="false"
+                                                           GridPane.columnIndex="1"/>
+
+                                                <Label text="Назва" GridPane.rowIndex="1">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFEditFullName" GridPane.columnIndex="1"
+                                                           GridPane.rowIndex="1"/>
+
+                                                <Label text="Скорочено" GridPane.rowIndex="2">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFEditShortName" GridPane.columnIndex="1"
+                                                           GridPane.rowIndex="2"/>
+
+                                                <Label text="Позначення" GridPane.rowIndex="3">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFEditCode" GridPane.columnIndex="1"
+                                                           GridPane.rowIndex="3"/>
+
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabFilter" text="Фільтр">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <GridPane layoutX="186.0" layoutY="19.0" prefHeight="138.0" prefWidth="780.0"
+                                                  AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                                                  AnchorPane.topAnchor="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity"
+                                                                   minWidth="-Infinity" prefWidth="130.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0"
+                                                                   prefWidth="486.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="143.0"
+                                                                   prefWidth="164.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity"
+                                                                prefHeight="30.0" vgrow="SOMETIMES"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Код">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFFilterId" GridPane.columnIndex="1"/>
+
+                                                <Label text="Назва" GridPane.rowIndex="1">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFFilterFullName" GridPane.columnIndex="1"
+                                                           GridPane.rowIndex="1"/>
+
+                                                <Label text="Скорочено" GridPane.rowIndex="2">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFFilterShortName" GridPane.columnIndex="1"
+                                                           GridPane.rowIndex="2"/>
+
+                                                <Label text="Позначення" GridPane.rowIndex="3">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="textFFilterCode" GridPane.columnIndex="1"
+                                                           GridPane.rowIndex="3"/>
+
+
+                                                <Label text="Викладач" GridPane.rowIndex="4">
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="comboBoxFilterTeacher" prefWidth="500.0"
+                                                          GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                                                <Button fx:id="buttonShowTeachers" mnemonicParsing="false"
+                                                        onAction="#onButtonShowTeachers" prefWidth="35.0"
+                                                        GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                    <GridPane.margin>
+                                                        <Insets left="5.0"/>
+                                                    </GridPane.margin>
+                                                </Button>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </center>
+            <bottom>
+                <AnchorPane prefHeight="20.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox fx:id="hBoxEdit" layoutX="5.0" layoutY="3.0" spacing="5.0" AnchorPane.bottomAnchor="3.0"
+                              AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0">
+                            <children>
+                                <Button fx:id="buttonNew" layoutX="14.0" layoutY="2.0" maxWidth="-Infinity"
+                                        minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonNew"
+                                        prefWidth="30.0" text="Новий" AnchorPane.bottomAnchor="3.0"
+                                        AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0"/>
+                                <Button fx:id="buttonEdit" layoutX="73.0" layoutY="2.0" maxWidth="-Infinity"
+                                        minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonEdit"
+                                        prefWidth="30.0" text="Змінити" AnchorPane.bottomAnchor="3.0"
+                                        AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="3.0"/>
+                                <Button fx:id="buttonDelete" layoutX="133.0" layoutY="2.0" maxWidth="-Infinity"
+                                        minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonDelete"
+                                        prefWidth="30.0" text="Вилучити" AnchorPane.bottomAnchor="3.0"
+                                        AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="3.0"/>
+                            </children>
+                        </HBox>
+
+                        <HBox fx:id="hBoxOkCancel" layoutX="5.0" layoutY="3.0" spacing="5.0"
+                              AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0">
+                            <children>
+                                <Button fx:id="buttonOk" layoutX="14.0" layoutY="2.0" maxWidth="-Infinity"
+                                        minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonOk"
+                                        prefWidth="100.0" text="Приняти" AnchorPane.bottomAnchor="3.0"
+                                        AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0"/>
+                                <Button fx:id="buttonCancel" layoutX="73.0" layoutY="2.0" maxWidth="-Infinity"
+                                        minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonCancel"
+                                        prefWidth="100.0" text="Відмінити" AnchorPane.bottomAnchor="3.0"
+                                        AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="3.0"/>
+                            </children>
+                        </HBox>
+
+                        <HBox fx:id="hBoxFilter" layoutX="5.0" layoutY="3.0" spacing="5.0" AnchorPane.bottomAnchor="3.0"
+                              AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="3.0">
+                            <children>
+                                <Button fx:id="buttonFilter" layoutX="14.0" layoutY="2.0" maxWidth="-Infinity"
+                                        minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonFilter"
+                                        prefWidth="30.0" text="Фільтр" AnchorPane.bottomAnchor="3.0"
+                                        AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0"/>
+                            </children>
+                        </HBox>
+
+                        <HBox fx:id="hBoxNavigation" layoutX="289.0" layoutY="2.0" spacing="1.0"
+                              AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="3.0">
+                            <children>
+                                <Button fx:id="buttonFirst" layoutX="289.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonFirst" prefWidth="30.0"/>
+                                <Button fx:id="buttonPrior" layoutX="341.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonPrior" prefWidth="30.0"/>
+                                <Button fx:id="buttonNext" layoutX="393.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonNext" prefWidth="30.0"/>
+                                <Button fx:id="buttonLast" layoutX="445.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonLast" prefWidth="30.0"/>
+                                <Button fx:id="buttonRefresh" layoutX="497.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonRefresh" prefWidth="30.0"/>
+
+
+                                <MenuButton fx:id="menuButtonReports" mnemonicParsing="false" prefWidth="40.0">
+                                    <items>
+                                        <MenuItem fx:id="menuItemExcel" mnemonicParsing="false"
+                                                  onAction="#onMenuItemExcel" text="Експорт Excel"/>
+
+                                        <MenuItem fx:id="menuItemJasper" mnemonicParsing="false"
+                                                  onAction="#onMenuItemJasper" text="Експорт"/>
+                                    </items>
+                                </MenuButton>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

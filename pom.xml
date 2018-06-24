@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>Curriculum</groupId>
+    <artifactId>Curriculum</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4j2.version>2.11.0</log4j2.version>
+        <apache.poi.version>3.16</apache.poi.version>
+        <junit.version>4.12</junit.version>
+        <ucanaccess.version>4.0.4</ucanaccess.version>
+        <apache.poi.version>3.15</apache.poi.version>
+        <commons.MD5.codec>1.9</commons.MD5.codec>
+        <jasperreports.version>6.6.0</jasperreports.version>
+
+    </properties>
+
+    <dependencies>
+        <!--Log4j 2-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+
+        <!-- Excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${apache.poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${apache.poi.version}</version>
+        </dependency>
+
+        <!-- For Access -->
+        <dependency>
+            <groupId>net.sf.ucanaccess</groupId>
+            <artifactId>ucanaccess</artifactId>
+            <version>${ucanaccess.version}</version>
+        </dependency>
+
+        <!-- MD5 -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.MD5.codec}</version>
+        </dependency>
+        <!--  to open encrypted files -->
+        <!--        <dependency>
+                    <groupId>com.healthmarketscience.jackcess</groupId>
+                    <artifactId>jackcess-encrypt</artifactId>
+                    <version>2.1.4</version>
+                </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>${jasperreports.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+        <!-- need for XLS export-->
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <finalName>Curriculum</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <configuration>
+                    <mainClass>ua.curriculum.MainApp</mainClass>
+                    <jfxMainAppJarName>Curriculum.jar</jfxMainAppJarName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

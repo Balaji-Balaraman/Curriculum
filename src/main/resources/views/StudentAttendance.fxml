@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="589.0" prefWidth="923.0"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="ua.curriculum.controller.StudentAttendanceViewController">
+    <children>
+        <BorderPane prefHeight="589.0" prefWidth="923.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <top>
+                <AnchorPane maxWidth="-Infinity" prefHeight="150.0" prefWidth="923.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <GridPane layoutX="152.0" layoutY="48.0" maxWidth="-Infinity" minWidth="-Infinity"
+                                  AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                                  AnchorPane.topAnchor="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity"
+                                                   prefWidth="60.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity"
+                                                   prefWidth="355.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity"
+                                                   prefWidth="55.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0"
+                                                vgrow="SOMETIMES"/>
+                            </rowConstraints>
+
+                            <children>
+                                <Label text="Період">
+                                    <GridPane.margin>
+                                        <Insets/>
+                                    </GridPane.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <Label text="з" GridPane.columnIndex="1">
+                                    <GridPane.margin>
+                                        <Insets/>
+                                    </GridPane.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+
+                                <DatePicker fx:id="datePickerFilterPeriodFrom" maxWidth="-Infinity" minWidth="-Infinity"
+                                            prefWidth="150.0" GridPane.columnIndex="1">
+                                    <GridPane.margin>
+                                        <Insets left="20.0"/>
+                                    </GridPane.margin>
+                                </DatePicker>
+
+                                <Label text="по" GridPane.columnIndex="1">
+                                    <GridPane.margin>
+                                        <Insets left="180.0"/>
+                                    </GridPane.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <DatePicker fx:id="datePickerFilterPeriodTill" maxWidth="-Infinity" minWidth="-Infinity"
+                                            prefWidth="150.0" GridPane.columnIndex="1">
+                                    <GridPane.margin>
+                                        <Insets left="205.0"/>
+                                    </GridPane.margin>
+                                </DatePicker>
+
+                                <Label text="Група" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <ComboBox fx:id="comboBoxGroup" AnchorPane.leftAnchor="0.0"
+                                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0"/>
+                                    </children>
+                                </AnchorPane>
+                                <Button fx:id="buttonShowGroups" mnemonicParsing="false" onAction="#onButtonShowGroups"
+                                        prefWidth="35.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <GridPane.margin>
+                                        <Insets left="10.0"/>
+                                    </GridPane.margin>
+                                </Button>
+
+
+                                <Label text="Студент" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                        <ComboBox fx:id="comboBoxStudent" AnchorPane.leftAnchor="0.0"
+                                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0"/>
+                                    </children>
+                                </AnchorPane>
+                                <Button fx:id="buttonShowStudents" mnemonicParsing="false"
+                                        onAction="#onButtonShowStudents" prefWidth="35.0" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="2">
+                                    <GridPane.margin>
+                                        <Insets left="10.0"/>
+                                    </GridPane.margin>
+                                </Button>
+
+
+                                <Label text="Предмет" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <children>
+                                        <ComboBox fx:id="comboBoxSubject" AnchorPane.leftAnchor="0.0"
+                                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0"/>
+                                    </children>
+                                </AnchorPane>
+                                <Button fx:id="buttonShowSubjects" mnemonicParsing="false"
+                                        onAction="#onButtonShowSubjects" prefWidth="35.0" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="3">
+                                    <GridPane.margin>
+                                        <Insets left="10.0"/>
+                                    </GridPane.margin>
+                                </Button>
+
+                                <Button fx:id="buttonFilter" mnemonicParsing="false" onAction="#onButtonFilter"
+                                        prefWidth="150.0" text="Пошук" GridPane.columnIndex="3" GridPane.rowIndex="4">
+
+                                    <GridPane.margin>
+                                        <Insets left="10.0"/>
+                                    </GridPane.margin>
+                                </Button>
+                            </children>
+
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </top>
+
+            <center>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <TabPane fx:id="tabPane" side="BOTTOM" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <tabs>
+                                <Tab fx:id="tabTable" closable="false" text="Таблиця">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <TableView fx:id="tableViewStudentAttendanceData" prefHeight="200.0"
+                                                           prefWidth="200.0" tableMenuButtonVisible="true"
+                                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="tableColumnSubjectName"
+                                                                     prefWidth="197.99998474121094" text="Предмет"/>
+                                                        <TableColumn fx:id="tableColumnGroupName"
+                                                                     prefWidth="197.99998474121094" text="Група"/>
+                                                        <TableColumn fx:id="tableColumnStudentPIP" prefWidth="199.0"
+                                                                     text="Студент"/>
+                                                        <TableColumn fx:id="tableColumnTotalLessons" prefWidth="90.0"
+                                                                     text="Всього занять"/>
+                                                        <TableColumn fx:id="tableColumnTotalPresence" prefWidth="90.0"
+                                                                     text="Присутній"/>
+                                                        <TableColumn fx:id="tableColumnTotalAbsences" prefWidth="90.0"
+                                                                     text="Відсутній"/>
+                                                        <TableColumn fx:id="tableColumnTotalByIllness" prefWidth="90.0"
+                                                                     text="За хворобою"/>
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab fx:id="tabView" text="Подробиці">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+
+                                                <GridPane layoutX="25.0" layoutY="14.0" prefHeight="60.0"
+                                                          prefWidth="635.0" AnchorPane.leftAnchor="10.0"
+                                                          AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity"
+                                                                           minWidth="-Infinity" prefWidth="60.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity"
+                                                                           prefWidth="355.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity"
+                                                                           minWidth="-Infinity" prefWidth="60.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="243.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints/>
+                                                        <RowConstraints maxHeight="-Infinity" minHeight="10.0"
+                                                                        prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                        <RowConstraints maxHeight="-Infinity" minHeight="10.0"
+                                                                        prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label text="Предмет" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                            <padding>
+                                                                <Insets left="5.0"/>
+                                                            </padding>
+                                                        </Label>
+                                                        <TextField fx:id="textFViewSubject" editable="false"
+                                                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                                        <Label text="Група" GridPane.rowIndex="2">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                            <padding>
+                                                                <Insets left="5.0"/>
+                                                            </padding>
+                                                        </Label>
+                                                        <TextField fx:id="textFViewGroup" editable="false"
+                                                                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+
+                                                        <Label text="Студент" GridPane.columnIndex="2"
+                                                               GridPane.rowIndex="2">
+                                                            <GridPane.margin>
+                                                                <Insets/>
+                                                            </GridPane.margin>
+                                                            <padding>
+                                                                <Insets left="10.0"/>
+                                                            </padding>
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <TextField fx:id="textFViewStudent" editable="false"
+                                                                   GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                                                        <Separator prefWidth="200.0" GridPane.columnSpan="4"/>
+
+                                                    </children>
+                                                </GridPane>
+
+                                                <Label layoutX="342.0" layoutY="116.0" text="Відвідуваність"
+                                                       AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="70.0">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+
+                                                <TableView fx:id="tableViewAttendanceData" prefHeight="200.0"
+                                                           prefWidth="200.0" AnchorPane.bottomAnchor="0.0"
+                                                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                           AnchorPane.topAnchor="90.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="tableColumnDate" text="Дата"/>
+                                                        <TableColumn fx:id="tableColumnLessonNo" text="№ заняття"/>
+                                                        <TableColumn fx:id="tableColumnLessonTime" prefWidth="100.0"
+                                                                     text="Час"/>
+                                                        <TableColumn fx:id="tableColumnLessonType" prefWidth="200.0"
+                                                                     text="Тип"/>
+                                                        <TableColumn fx:id="tableColumnClassRoom" prefWidth="100.0"
+                                                                     text="Тип"/>
+                                                        <TableColumn fx:id="tableColumnAttendanceState"
+                                                                     prefWidth="100.0" text="Присутність"/>
+
+                                                    </columns>
+                                                </TableView>
+
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </AnchorPane>
+            </center>
+
+            <bottom>
+                <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+
+                    <children>
+
+                        <HBox fx:id="hBoxNavigation" layoutX="200.0" layoutY="2.0" spacing="1.0"
+                              AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="3.0">
+                            <children>
+                                <Button fx:id="buttonFirst" layoutX="289.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonFirst" prefWidth="30.0"/>
+                                <Button fx:id="buttonPrior" layoutX="341.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonPrior" prefWidth="30.0"/>
+                                <Button fx:id="buttonNext" layoutX="393.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonNext" prefWidth="30.0"/>
+                                <Button fx:id="buttonLast" layoutX="445.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonLast" prefWidth="30.0"/>
+                                <Button fx:id="buttonRefresh" layoutX="497.0" layoutY="2.0" mnemonicParsing="false"
+                                        onAction="#onButtonRefresh" prefWidth="30.0"/>
+                                <MenuButton fx:id="menuButtonReports" mnemonicParsing="false" prefWidth="40.0">
+                                    <items>
+                                        <MenuItem fx:id="menuItemExcel" mnemonicParsing="false"
+                                                  onAction="#onMenuItemExcel" text="Експорт Excel"/>
+
+                                        <MenuItem fx:id="menuItemJasper" mnemonicParsing="false"
+                                                  onAction="#onMenuItemJasper" text="Експорт"/>
+                                    </items>
+                                </MenuButton>
+                            </children>
+                        </HBox>
+
+                    </children>
+                </AnchorPane>
+
+            </bottom>
+
+        </BorderPane>
+
+    </children>
+</AnchorPane>

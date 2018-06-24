@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.curriculum.controller.EditCurriculumViewController">
+    <children>
+        <GridPane layoutX="25.0" layoutY="14.0" prefHeight="216.0" prefWidth="388.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="70.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="275.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+
+                <Label text="Дата">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="textFDate" editable="false" GridPane.columnIndex="1" />
+
+
+                <Label text="Група" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="comboBoxGroup" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button fx:id="buttonShowGroup" mnemonicParsing="false" onAction="#onButtonShowGroup"
+                        prefWidth="35.0"
+                        GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                </Button>
+
+                <Label text="№" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="comboBoxLesson" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </ComboBox>
+
+                <Label text="Тип" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="comboBoxLessonType" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </ComboBox>
+
+
+                <Label text="Аудиторія" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="comboBoxClassroom" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1"
+                          GridPane.rowIndex="4" />
+                <Button fx:id="buttonShowClassroom" mnemonicParsing="false" onAction="#onButtonShowClassloom"
+                        prefWidth="35.0"
+                        GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                </Button>
+
+                <Label text="Предмет" GridPane.rowIndex="5">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="comboBoxSubject" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Button fx:id="buttonShowSubject" mnemonicParsing="false" onAction="#onButtonShowSubject"
+                        prefWidth="35.0"
+                        GridPane.columnIndex="2" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                </Button>
+
+                <Label text="Викладач" GridPane.rowIndex="6">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="comboBoxTeacher" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Button fx:id="buttonShowTeacher" mnemonicParsing="false" onAction="#onButtonShowTeacher"
+                        prefWidth="35.0"
+                        GridPane.columnIndex="2" GridPane.rowIndex="6">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                </Button>
+
+            </children>
+        </GridPane>
+        <AnchorPane layoutX="0.0" layoutY="146.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <HBox fx:id="hBoxOkCancel" layoutX="5.0" layoutY="3.0" prefHeight="25.0" spacing="80.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="3.0">
+                    <children>
+                        <Button fx:id="buttonOk" layoutX="14.0" layoutY="2.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonOk" prefWidth="100.0" text="Приняти" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0" />
+                        <Button fx:id="buttonCancel" layoutX="73.0" layoutY="2.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonCancel" prefWidth="100.0" text="Відмінити" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="3.0" />
+                    </children>
+                    <padding>
+                        <Insets left="90.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+
+</AnchorPane>

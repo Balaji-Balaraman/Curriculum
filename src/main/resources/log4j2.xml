@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="log-path">logs</Property>
+    </Properties>
+
+
+    <Appenders>
+        <RollingFile name="FILE" fileName="${log-path}/logfile.log"
+                     filePattern="${log-path}/$${date:MM-yyyy}/app-%d{dd-MM-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+            <!--MAX files count-->
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!--<File fileName="FILE" fileName="${log-path}/logfile.log" append="true">-->
+            <!--<PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n"/>-->
+        <!--</File>-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n"/>
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="ua.curriculum.MainApp" level="debug" additivity="true"/>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FILE"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
