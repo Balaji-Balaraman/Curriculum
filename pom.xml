@@ -97,7 +97,7 @@
                 <version>8.8.3</version>
                 <configuration>
                     <mainClass>ua.curriculum.MainApp</mainClass>
-                    <jfxMainAppJarName>Curriculum.jar</jfxMainAppJarName>
+                    <jfxMainAppJarName>Curriculum.war</jfxMainAppJarName>
                 </configuration>
             </plugin>
             <plugin>
