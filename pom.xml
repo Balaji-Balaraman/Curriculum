@@ -7,7 +7,7 @@
     <groupId>Curriculum</groupId>
     <artifactId>Curriculum</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
